@@ -1,11 +1,16 @@
-from django.shortcuts import render, HttpResponse
-
+from django.shortcuts import render
+from .models import Student
+import datetime
 
 def index(request):
-    return render(request, 'index.html')
+    context = {
+        "Students": Student.objects.all(),
+        "date": datetime.date.today(),
+    }
+    return render(request, "index.html", context)
 
 def about(request):
-    return render(request, 'about.html')
+    return render(request, "about.html")
 
 def contact(request):
-    return render(request, 'contact.html')
+    return render(request, "contact.html")

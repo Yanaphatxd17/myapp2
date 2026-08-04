@@ -1,20 +1,33 @@
 {% extends 'base.html' %}
 
-{% block title %}About{% endblock %}
+{% block title %}About Us - SB Admin 2{% endblock %}
 
 {% block content %}
-<header>
-  <nav>
-    <a href="/">Home</a>
-    <a href="/about/">About</a>
-    <a href="/contact/">Contact</a>
-  </nav>
-</header>
-<main>
-  <h1>About</h1>
-  <p>This is the about page.</p>
-</main>
-<footer>
-  © 2026 My Django Site
-</footer>
+<!-- Page Heading -->
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">About Us</h1>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <!-- About card -->
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">About Our Application</h6>
+            </div>
+            <div class="card-body">
+                <p>Welcome to <strong>SB Admin 2</strong> powered by <strong>Django</strong>!</p>
+                <p>This application demonstrates layout template inheritance using Django's template system. By structuring files into a reusable <code>base.html</code> template, all pages (Dashboard, About Us, and Contact Us) share the same sidebar navigation, header, and footer structure dynamically.</p>
+                <hr>
+                <h5>Key Technologies Used:</h5>
+                <ul>
+                    <li>Django Web Framework</li>
+                    <li>Python Database API & Models (dynamic student directory table)</li>
+                    <li>Bootstrap 4 (SB Admin 2 Theme)</li>
+                    <li>Google Fonts & FontAwesome Icons</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}

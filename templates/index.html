@@ -1,4 +1,69 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
 
-{% block title %}Dashboard{% endblock %}
+{% block title %}รายชื่อนักศึกษา{% endblock %}
 
+{% block content %}
+
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <h1 class="h3 mb-4 text-gray-800">
+        รายชื่อนักศึกษา
+    </h1>
+
+    <!-- Student Table -->
+    <div class="card shadow mb-4">
+
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">
+                ตารางข้อมูลนักศึกษา
+            </h6>
+        </div>
+
+        <div class="card-body">
+
+            <div class="table-responsive">
+
+                <table class="table table-bordered table-striped">
+
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>ลำดับ</th>
+                            <th>รหัสนักศึกษา</th>
+                            <th>คำนำหน้า</th>
+                            <th>ชื่อ</th>
+                            <th>นามสกุล</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        {% for student in Students %}
+                        <tr>
+                            <td>{{ forloop.counter }}</td>
+                            <td>{{ student.st_id }}</td>
+                            <td>{{ student.prefix_name }}</td>
+                            <td>{{ student.fname }}</td>
+                            <td>{{ student.lname }}</td>
+                        </tr>
+                        {% empty %}
+                        <tr>
+                            <td colspan="5" class="text-center">
+                                ไม่มีข้อมูลนักศึกษา
+                            </td>
+                        </tr>
+                        {% endfor %}
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
