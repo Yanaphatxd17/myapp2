@@ -42,8 +42,8 @@
                         {% for student in Students %}
                         <tr>
                             <td>{{ forloop.counter }}</td>
-                            <td>{{ student.st_id }}</td>
-                            <td>{{ student.prefix_name }}</td>
+                            <td><a href="{% url 'app1:student_detail' pk=student.pk %}">{{ student.st_id }}</a></td>
+                            <td>{{ student.prefix_name|default:"" }}</td>
                             <td>{{ student.fname }}</td>
                             <td>{{ student.lname }}</td>
                             <td>{{ student.major }}</td>

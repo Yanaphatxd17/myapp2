@@ -25,7 +25,7 @@ class Student(models.Model):
         choices=PREFIX_NAME
     )
 
-    st_id = models.CharField(max_length=20)
+    st_id = models.BigIntegerField(unique=True)
     fname = models.CharField(max_length=100)
     lname = models.CharField(max_length=100)
     major = models.ForeignKey(Major, on_delete=models.CASCADE, default=1)

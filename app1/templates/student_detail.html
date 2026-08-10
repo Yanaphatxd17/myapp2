@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 class="mt-4">ข้อมูลนักศึกษา</h1>
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item"><a href="{% url 'app1:home' %}">Home</a></li>
+    <li class="breadcrumb-item active">ข้อมูลนักศึกษา</li>
+</ol>
+
+<div class="card p-4">
+    <p><strong>รหัสนักศึกษา:</strong> {{ student.st_id }}</p>
+    <p><strong>ชื่อ-นามสกุล:</strong> {{ student.prefix_name }} {{ student.fname }} {{ student.lname }}</p>
+    <p><strong>สาขาวิชา:</strong> {{ student.major }}</p>
+</div>
+{% endblock %}
