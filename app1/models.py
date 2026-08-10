@@ -1,6 +1,17 @@
 from django.db import models
 
 
+class Major(models.Model):
+    mj_name = models.CharField(max_length=100, blank=False)
+
+    class Meta:
+        verbose_name = "major"
+        verbose_name_plural = "majors"
+
+    def __str__(self):
+        return self.mj_name
+
+
 class Student(models.Model):
 
     PREFIX_NAME = [
@@ -17,6 +28,7 @@ class Student(models.Model):
     st_id = models.CharField(max_length=20)
     fname = models.CharField(max_length=100)
     lname = models.CharField(max_length=100)
+    major = models.ForeignKey(Major, on_delete=models.CASCADE, default=1)
 
     def __str__(self):
         return f"{self.prefix_name}{self.fname} {self.lname}"

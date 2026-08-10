@@ -33,6 +33,7 @@
                             <th>คำนำหน้า</th>
                             <th>ชื่อ</th>
                             <th>นามสกุล</th>
+                            <th>สาขาวิชา</th>
                         </tr>
                     </thead>
 
@@ -45,6 +46,7 @@
                             <td>{{ student.prefix_name }}</td>
                             <td>{{ student.fname }}</td>
                             <td>{{ student.lname }}</td>
+                            <td>{{ student.major }}</td>
                         </tr>
                         {% empty %}
                         <tr>
